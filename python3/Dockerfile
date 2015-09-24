@@ -1,13 +1,13 @@
 #
-# Python2 Dockerfile
+# python3 Dockerfile
 #
-# https://github.com/ibbd/dockerfile-python/python2
+# https://github.com/ibbd/dockerfile-python/python3
 #
-# sudo docker build -t ibbd/python2 ./
+# sudo docker build -t ibbd/python3 ./
 #
 
 # Pull base image.
-FROM python:2.7-slim
+FROM python:3.5-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
