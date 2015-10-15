@@ -17,11 +17,9 @@ ADD sources.list /etc/apt/sources.list
 # install 
 # ipython: http://ipython.org/install.html
 RUN \
-    devPypiSource='-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com' \
+    mkdir -p /var/www \
+    && devPypiSource='-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com' \
     && pip install $devPypiSource ipython
-
-# 代码目录
-RUN mkdir -p /var/www
 
 # Define working directory.
 WORKDIR /var/www
