@@ -21,20 +21,8 @@ RUN \
         build-essential \
         python-dev \
         libreadline-dev \
+        libboost-all-dev \
+        aptitude \
+    && pip install -v pyv8 \
     && rm -rf /var/lib/apt/lists/*
-
-# 安装V8
-RUN \
-    cd /root/ \
-    && svn checkout http://v8.googlecode.com/svn/trunk/ v8 \
-    && cd v8 \
-    && sed -i 's/svn checkout --force/svn checkout --non-interactive --trust-server-cert --force/g' Makefile \
-    && make builddeps \
-    && make native console=readline \
-    && mv out/native/d8 /usr/local/bin/d8 \
-    && ln -s /usr/local/bin/d8 /usr/local/bin/v8 \
-    && rm -rf v8 \
-    && apt-get autoremove subversion build-essential \
-    && apt-get clean
-
 
