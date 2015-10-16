@@ -15,7 +15,7 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # 安装依赖
 RUN \
     apt-get update \
-    && apt-get install -y --no-install-recommands \
+    && apt-get install -y --no-install-recommends \
         curl \
         subversion \
         build-essential \
@@ -33,9 +33,7 @@ RUN \
     && make native console=readline \
     && mv out/native/d8 /usr/local/bin/d8 \
     && ln -s /usr/local/bin/d8 /usr/local/bin/v8 \
-    && cd .. \
-    && rm -rf v8 \
-    && apt-get autoremove subversion build-essential \
-    && apt-get clean
+    && cd /root \
+    && rm -rf v8 
 
 
