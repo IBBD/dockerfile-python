@@ -36,4 +36,7 @@ RUN \
     && cd /root \
     && rm -rf v8 
 
+# install pyv8 
+RUN \
+    pip install pyv8 
 
