@@ -24,19 +24,17 @@ RUN \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装V8
-RUN \
-    cd /root/ \
-    && svn checkout http://v8.googlecode.com/svn/trunk/ v8 \
-    && cd v8 \
-    && sed -i 's/svn checkout --force/svn checkout --non-interactive --trust-server-cert --force/g' Makefile \
-    && make builddeps \
-    && make native console=readline \
-    && mv out/native/d8 /usr/local/bin/d8 \
-    && ln -s /usr/local/bin/d8 /usr/local/bin/v8 \
-    && cd /root \
-    && rm -rf v8 
-
 # install pyv8 
 RUN \
-    pip install pyv8 
+    apt-get update \
+    && apt-get install -y --no-install-recommends scons \
+        libboost-all-dev \
+    && cd /root/ \
+    && svn checkout http://v8.googlecode.com/svn/trunk/ v8 \
+    && svn checkout http://pyv8.googlecode.com/svn/trunk/ pyv8 \
+    && cd v8 \
+    && export V8_HOME=`/root/v8` \
+    && cd ../pyv8 \
+    && python setup.py build \
+    && python setup.py install
 
