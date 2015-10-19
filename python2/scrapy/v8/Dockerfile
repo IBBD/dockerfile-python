@@ -48,6 +48,10 @@ RUN \
     && python setup.py build \
     && python setup.py install \
     && apt-get purge -y --auto-remove $buildDeps \
+    && cd /root/ \
+    && rm -rf v8 \
+    && rm -rf pyv8 \
+    && rm -rf .subversion \
     && find /usr/local \
         \( -type d -a -name test -o -name tests \) \
         -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
