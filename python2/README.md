@@ -6,4 +6,10 @@
 
 - iPython
 
+## 获取镜像 
+
+```sh 
+docker pull ibbd/python2 
+```
+
 

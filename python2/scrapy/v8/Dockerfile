@@ -2,7 +2,7 @@
 # python2-scrapy-v8 Dockerfile
 # 在python2-scrapy镜像的基础上增加v8解释引擎及pyv8 
 #
-# https://github.com/ibbd/dockerfile-python/scrapy/v8
+# https://github.com/ibbd/dockerfile-python/python2/scrapy/v8
 #
 # sudo docker build -t ibbd/python2-scrapy-v8 ./
 #

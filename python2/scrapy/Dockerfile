@@ -1,9 +1,9 @@
 #
-# Scrapy Dockerfile
+# Python2 Scrapy Dockerfile
 #
-# https://github.com/ibbd/dockerfile-python/scrapy
+# https://github.com/ibbd/dockerfile-python/python2/scrapy
 #
-# sudo docker build -t ibbd/scrapy ./
+# sudo docker build -t ibbd/python2-scrapy ./
 #
 
 # Pull base image.
