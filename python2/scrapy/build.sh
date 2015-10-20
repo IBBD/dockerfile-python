@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name=scrapy
+name=python2-scrapy-v8
 
 # 清除已有的
 #docker stop ibbd-$name 

@@ -22,7 +22,6 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # 安装V8
 # install pyv8 
 # libboost-all-dev \
-# @see http://www.cnblogs.com/vingi/articles/4131633.html
 RUN \
     set -x \
     && buildDeps=' \
