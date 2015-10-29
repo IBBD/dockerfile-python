@@ -40,7 +40,9 @@ RUN set -x \
         libffi-dev \
         ' \
     && set -x \
-    && apt-get install -y $buildDeps --no-install-recommends \
+    && apt-get install -y --no-install-recommends $buildDeps \
+        python-libxml2 \
+        python-libxslt1 \
     && devPypiSource=' -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com' \
     && pip install $devPypiSource scrapy-redis \
     && pip install $devPypiSource torndb \
