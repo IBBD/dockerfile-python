@@ -1,9 +1,9 @@
 #
 # python3 Dockerfile
 #
-# https://github.com/ibbd/dockerfile-python/python3
+# https://github.com/ibbd/dockerfile-python/spacy
 #
-# sudo docker build -t ibbd/python3 ./
+# sudo docker build -t ibbd/spacy ./
 #
 
 # Pull base image.
@@ -17,8 +17,10 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # install 
 # ipython: http://ipython.org/install.html
 RUN \
-    devPypiSource='-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com' \
-    && pip install $devPypiSource ipython
+    pip install -U \
+        spacy \
+        ipython \
+        jieba
 
 # 代码目录
 RUN mkdir -p /var/www
@@ -28,5 +30,3 @@ WORKDIR /var/www
 
 # 解决时区问题
 ENV TZ "Asia/Shanghai"
-
-
