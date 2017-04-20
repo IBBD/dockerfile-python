@@ -17,10 +17,21 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # install 
 # ipython: http://ipython.org/install.html
 RUN \
-    pip install -U \
+    apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        python-dev \
+        git \
+    && pip install -U \
         spacy \
         ipython \
-        jieba
+        jieba \
+    && apt-get purge -y --auto-remove $buildDeps \
+    && find /usr/local \
+        \( -type d -a -name test -o -name tests \) \
+        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+        -exec rm -rf '{}' + \
+    && rm -rf /var/lib/apt/lists/*
 
 # 代码目录
 RUN mkdir -p /var/www
