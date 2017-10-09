@@ -3,30 +3,28 @@
 #
 # https://github.com/ibbd/dockerfile-python/python3
 #
-# sudo docker build -t ibbd/python3 ./
-#
 
 # Pull base image.
 FROM python:3.6-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
-# 使用阿里云的镜像
-#ADD sources.list /etc/apt/sources.list
-
-# install 
-# ipython: http://ipython.org/install.html
-RUN \
-    devPypiSource='-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com' \
-    && pip install $devPypiSource ipython
-
-# 代码目录
-RUN mkdir -p /var/www
+# install pip3
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && apt-get update -y \
+    && apt-get install -y python3-pip \
+    && pip3 install -U pip \
+    && apt-get autoremove \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
 
 # Define working directory.
+# 代码目录
 WORKDIR /var/www
+
+# 终端设置
+# 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
+ENV TERM xterm
 
 # 解决时区问题
 ENV TZ "Asia/Shanghai"
-
-

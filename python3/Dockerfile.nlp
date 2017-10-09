@@ -1,0 +1,36 @@
+#
+# python3 nlp Dockerfile
+#
+# https://github.com/ibbd/dockerfile-python/python3
+#
+
+# Pull base image.
+FROM ibbd/python3
+
+MAINTAINER Alex Cai "cyy0523xc@gmail.com"
+
+# pip install 
+RUN \
+    apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+    && pip3 install ipython \
+        setuptools \
+        wheel \
+        numpy \
+        pandas \
+        scipy \
+        nltk \
+        flask_restful \
+        flask-cors \
+        flask-httpauth \
+        pyyaml \
+        chardet \
+        jieba \
+        gunicorn \
+        cython \
+    && apt-get remove -y \
+        build-essential \
+    && apt-get autoremove -y \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
