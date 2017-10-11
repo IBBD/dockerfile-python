@@ -11,6 +11,7 @@ FROM debian:stretch-slim
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # install python3, pip3
+# 默认安装的时py3.5
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         gcc \
