@@ -14,6 +14,7 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         gcc \
+        python3 \
         python3-pip \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
