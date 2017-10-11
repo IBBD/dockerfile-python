@@ -6,7 +6,7 @@
 
 # Pull base image.
 #FROM python:3.6-slim
-FROM FROM debian:stretch-slim
+FROM debian:stretch-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
