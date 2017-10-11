@@ -5,21 +5,18 @@
 #
 
 # Pull base image.
-#FROM python:3.6-slim
-FROM FROM debian:stretch-slim
+FROM python:3.6-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
-# install python3, pip3
-RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends \
-        gcc \
-        python3-pip \
+# install pip3
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && apt-get update -y \
+    && apt-get install -y python3-pip \
+    && pip3 install -U pip \
+    && apt-get autoremove \
     && apt-get clean \
-    && rm -r /var/lib/apt/lists/* \
-    && pip3 install -U \
-        pip \
-        wheel
+    && rm -r /var/lib/apt/lists/*
 
 # Define working directory.
 # 代码目录
