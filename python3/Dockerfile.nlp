@@ -11,7 +11,8 @@ FROM ibbd/python3
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # pip install 
-        #nltk \
+# 很多依赖于setuptools
+# 这里只安装一些常用的包
 RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -23,18 +24,10 @@ RUN \
         numpy \
         pandas \
         scipy \
-        flask_restful \
-        flask-cors \
-        flask-httpauth \
-        flask_jsonrpc \
-        pyyaml \
-        chardet \
         jieba \
-        gunicorn \
-        cython \
+        nltk \
     && apt-get remove -y \
         build-essential \
-        python3-setuptools \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
