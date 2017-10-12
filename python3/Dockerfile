@@ -20,8 +20,7 @@ RUN apt-get update -y \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && pip3 install -U \
-        pip \
-        wheel
+        pip
 
 # Define working directory.
 # 代码目录
