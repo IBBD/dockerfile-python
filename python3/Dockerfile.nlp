@@ -16,6 +16,7 @@ RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
+        python3-setuptools \
     && pip3 install ipython \
         setuptools \
         wheel \
@@ -32,6 +33,7 @@ RUN \
         cython \
     && apt-get remove -y \
         build-essential \
+        python3-setuptools \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
