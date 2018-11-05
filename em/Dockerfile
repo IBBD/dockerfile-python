@@ -27,6 +27,7 @@ RUN pip --no-cache-dir install \
 # 安装server服务常用包
 RUN pip --no-cache-dir install \
     flask \
+    flask_restful \
     flask_script \
     flask_migrate \
     flask_sqlalchemy \
