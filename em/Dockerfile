@@ -17,7 +17,7 @@ RUN pip install -U pip setuptools \
 
 # 安装server相关服务包
 RUN pip --no-cache-dir install \
-    PyYaml \
+    redis \
     pyarrow \
     fastparquet \
     jsonschema \
