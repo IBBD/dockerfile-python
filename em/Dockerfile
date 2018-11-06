@@ -22,7 +22,8 @@ RUN pip --no-cache-dir install \
     fastparquet \
     jsonschema \
     mysqlclient \
-    celery[redis,msgpack]
+    celery[redis,msgpack] \
+    flower
 
 # 安装server服务常用包
 RUN pip --no-cache-dir install \
