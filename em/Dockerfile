@@ -23,7 +23,8 @@ RUN pip --no-cache-dir install \
     jsonschema \
     PyMySQL \
     mysqlclient \
-    celery[redis,msgpack] \
+    redis==2.10.6 \
+    celery[msgpack] \
     flower
 
 # 安装server服务常用包
