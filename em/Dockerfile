@@ -33,7 +33,8 @@ RUN pip --no-cache-dir install \
     flask_migrate \
     flask_sqlalchemy \
     Flask-Celery-Helper \
-    fire
+    fire \
+    requests
 
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
