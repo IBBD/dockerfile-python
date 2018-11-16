@@ -21,6 +21,7 @@ RUN pip --no-cache-dir install \
     pyarrow \
     fastparquet \
     jsonschema \
+    PyMySQL \
     mysqlclient \
     celery[redis,msgpack] \
     flower
