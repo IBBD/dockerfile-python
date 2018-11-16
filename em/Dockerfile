@@ -16,6 +16,7 @@ RUN pip install -U pip setuptools \
         scikit-learn
 
 # 安装server相关服务包
+# celery4.2.1暂时只支持redis2.10的版本，升级到3会报错
 RUN pip --no-cache-dir install \
     redis \
     pyarrow \
@@ -23,8 +24,7 @@ RUN pip --no-cache-dir install \
     jsonschema \
     PyMySQL \
     mysqlclient \
-    redis==2.10.6 \
-    celery[msgpack] \
+    celery[redis,msgpack] \
     flower
 
 # 安装server服务常用包
