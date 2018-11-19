@@ -30,7 +30,7 @@ RUN apt-get update -y \
 		tcl-dev \
 		tk \
 		tk-dev \
-		zlib-dev \
+		zlib-dev
 
 # 安装基础库
 # Scrapy==0.24.0 \
