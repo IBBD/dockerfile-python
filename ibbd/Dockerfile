@@ -7,8 +7,12 @@ FROM python:2.7-stretch
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
+# 安装相关环境
+RUN apt-get update -y \
+    && apt-get install -y build-essential
+
 # 安装基础库
-        #Scrapy==0.24.0 \
+# Scrapy==0.24.0 \
 RUN pip install -U pip setuptools \
     && pip --no-cache-dir install \
         Logbook==0.7.0 \
