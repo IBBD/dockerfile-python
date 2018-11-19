@@ -8,12 +8,12 @@ FROM python:2.7
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # 安装相关环境
+# libmysqlclient-dev \
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
         gcc \
         g++ \
-        libmysqlclient-dev \
         libffi-dev \
         libxml2-dev \
         libssl-dev \
