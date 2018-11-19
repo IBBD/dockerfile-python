@@ -9,7 +9,28 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # 安装相关环境
 RUN apt-get update -y \
-    && apt-get install -y build-essential gcc
+    && apt-get install -y \
+        build-essential \
+        bzip2-dev \
+		coreutils \
+		dpkg-dev dpkg \
+		findutils \
+		gcc \
+		gdbm-dev \
+		libc-dev \
+		libnsl-dev \
+		libressl-dev \
+		libtirpc-dev \
+		linux-headers \
+		make \
+		ncurses-dev \
+		pax-utils \
+		readline-dev \
+		sqlite-dev \
+		tcl-dev \
+		tk \
+		tk-dev \
+		zlib-dev \
 
 # 安装基础库
 # Scrapy==0.24.0 \
