@@ -3,13 +3,13 @@
 #
 
 # Pull base image.
-FROM python:2.7-stretch
+FROM python:2.7
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # 安装相关环境
 RUN apt-get update -y \
-    && apt-get install -y build-essential
+    && apt-get install -y build-essential gcc
 
 # 安装基础库
 # Scrapy==0.24.0 \
