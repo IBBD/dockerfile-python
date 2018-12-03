@@ -5,24 +5,18 @@
 #
 
 # Pull base image.
-#FROM python:3.6-slim
-FROM debian:stretch-slim
+FROM python:3.6-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
-# install python3, pip3
-# 默认安装的时py3.5
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        gcc \
-        python3 \
         python3-pip \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && pip3 install -U \
         pip
 
-# Define working directory.
 # 代码目录
 WORKDIR /var/www
 
