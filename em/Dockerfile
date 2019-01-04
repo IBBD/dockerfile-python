@@ -38,7 +38,8 @@ RUN pip --no-cache-dir install \
     fire \
     requests \
     pyjwt \
-    passlib
+    passlib \
+    chardet
 
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
