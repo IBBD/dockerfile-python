@@ -10,12 +10,12 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # 安装基础库
 # fasttext依赖于cython
 RUN pip install -U pip setuptools \
+    && pip --no-cache-dir install cython \
     && pip --no-cache-dir install \
         numpy \
         pandas \
         scipy \
         scikit-learn \
-        cython \
         fasttext
 
 # 安装server相关服务包
