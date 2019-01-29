@@ -16,7 +16,7 @@ RUN pip install -U pip setuptools \
         pandas \
         scipy \
         scikit-learn \
-        fasttext
+    && pip install git+https://github.com/facebookresearch/fastText.git
 
 # 安装server相关服务包
 # celery4.2.1暂时只支持redis2.10的版本，升级到3会报错
