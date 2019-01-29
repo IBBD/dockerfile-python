@@ -13,7 +13,8 @@ RUN pip install -U pip setuptools \
         numpy \
         pandas \
         scipy \
-        scikit-learn
+        scikit-learn \
+        fasttext
 
 # 安装server相关服务包
 # celery4.2.1暂时只支持redis2.10的版本，升级到3会报错
