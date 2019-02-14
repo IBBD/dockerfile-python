@@ -7,14 +7,6 @@ FROM python:3.6-stretch
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
-# 安装系统基础软件
-# auto-sklearn依赖于swig
-RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends \
-        swig \
-    && apt-get clean \
-    && rm -r /var/lib/apt/lists/* 
-
 # 安装基础库
 # fasttext依赖于cython
 RUN pip install -U pip setuptools \
@@ -24,8 +16,16 @@ RUN pip install -U pip setuptools \
         pandas \
         scipy \
         scikit-learn \
-        auto-sklearn \
     && pip install git+https://github.com/facebookresearch/fastText.git
+
+# 安装auto-sklearn
+# auto-sklearn依赖于swig
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+        swig \
+    && pip install auto-sklearn \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/* 
 
 # 安装server相关服务包
 # celery4.2.1暂时只支持redis2.10的版本，升级到3会报错
