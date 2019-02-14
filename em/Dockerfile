@@ -1,11 +1,19 @@
 #
-# python3 Dockerfile
+# python3 em Dockerfile
 #
 
 # Pull base image.
 FROM python:3.6-stretch
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
+
+# 安装系统基础软件
+# auto-sklearn依赖于swig
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+        swig \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/* 
 
 # 安装基础库
 # fasttext依赖于cython
@@ -16,6 +24,7 @@ RUN pip install -U pip setuptools \
         pandas \
         scipy \
         scikit-learn \
+        auto-sklearn \
     && pip install git+https://github.com/facebookresearch/fastText.git
 
 # 安装server相关服务包
