@@ -9,22 +9,38 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # 安装基础库
 # fasttext依赖于cython
-RUN pip install -U pip setuptools \
-    && pip --no-cache-dir install cython \
-    && pip --no-cache-dir install \
-        numpy \
-        pandas \
-        scipy \
-        scikit-learn \
-    && pip install git+https://github.com/facebookresearch/fastText.git
-
 # 安装auto-sklearn
 # auto-sklearn依赖于swig
+"""
+# auto-sklearn的依赖包:
+setuptools
+nose
+Cython
+
+numpy>=1.9.0,<=1.14.5
+scipy>=0.14.1
+
+scikit-learn>=0.19,<0.20
+xgboost>=0.80
+
+lockfile
+joblib
+psutil
+pyyaml
+liac-arff
+pandas
+
+ConfigSpace>=0.4.0,<0.5
+pynisher>=0.4.2
+pyrfr>=0.7,<0.8
+smac==0.8
+"""
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         swig \
     && curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip install \
     && pip install auto-sklearn \
+    && pip install git+https://github.com/facebookresearch/fastText.git \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
 
