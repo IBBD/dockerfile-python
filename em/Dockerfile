@@ -23,6 +23,7 @@ RUN pip install -U pip setuptools \
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         swig \
+    && curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip install \
     && pip install auto-sklearn \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
