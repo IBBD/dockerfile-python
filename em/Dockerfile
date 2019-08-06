@@ -34,7 +34,8 @@ RUN apt-get update -y \
         swig \
     && curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip install \
     && pip install auto-sklearn \
-    && pip install git+https://github.com/facebookresearch/fastText.git \
+    && pip install jieba jieba-fast fasttext \
+    && pip install xgboost lightgbm catboost \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
 
