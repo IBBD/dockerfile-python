@@ -10,6 +10,7 @@ RUN apt-get update -y \
         python3-pip \
         wget \
         curl \
+        git \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && wget https://bootstrap.pypa.io/get-pip.py \
