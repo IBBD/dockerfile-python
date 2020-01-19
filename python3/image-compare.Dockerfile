@@ -3,10 +3,10 @@ FROM python:3.6-slim
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
-# opencv依赖：libglib2.0-0, libsm6
+# opencv依赖：libglib2.0-0, libsm6, libxext-dev
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        libglib2.0-0 libsm6 libxrender1 \
+        libglib2.0-0 libsm6 libxrender1 libxext-dev \
         python3-pip \
         wget \
         curl \
