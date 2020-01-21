@@ -4,6 +4,8 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # opencv依赖：libglib2.0-0, libsm6, libxext-dev
+# pdf2image: 依赖poppler-utils
+# pdf2image: Most distros ship with pdftoppm and pdftocairo. If they are not installed, refer to your package manager to install poppler-utils
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         libglib2.0-0 libsm6 libxrender1 libxext-dev \
@@ -11,6 +13,7 @@ RUN apt-get update -y \
         wget \
         curl \
         git \
+        poppler-utils \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* \
     && wget https://bootstrap.pypa.io/get-pip.py \
