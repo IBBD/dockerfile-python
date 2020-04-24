@@ -9,6 +9,8 @@ FROM python:3.6-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
+RUN pip install mlflow
+
 # 代码目录
 WORKDIR /var/www
 
