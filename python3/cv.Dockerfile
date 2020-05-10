@@ -23,7 +23,8 @@ RUN pip3 install \
         scikit-image \
         opencv-python \
         fastapi \
-        uvicorn
+        uvicorn \
+        python-multipart
 
 # 安装自有模块
 RUN pip3 install -r https://github.com/ibbd-dev/python-ibbd-algo/raw/master/requirements.txt \
