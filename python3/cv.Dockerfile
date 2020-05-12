@@ -10,6 +10,7 @@ RUN apt-get update -y \
         wget \
         curl \
         git \
+        python3-dev \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
 
