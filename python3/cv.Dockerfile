@@ -26,7 +26,9 @@ RUN pip3 install \
         uvicorn \
         python-multipart \
         PyPDF4 \
-        pdf2image
+        pdf2image \
+        fuzzywuzzy python-Levenshtein \
+        diff-match-patch
 
 # 安装自有模块
 RUN pip3 install -r https://github.com/ibbd-dev/python-ibbd-algo/raw/master/requirements.txt \
