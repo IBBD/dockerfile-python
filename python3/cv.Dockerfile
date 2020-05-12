@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.7
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,11 +10,11 @@ RUN apt-get update -y \
         wget \
         curl \
         git \
-        python3-dev \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
 
 # install python package
+# python-Levenshtein依赖：python3-dev
 RUN pip3 install \
         numpy \
         scipy \
