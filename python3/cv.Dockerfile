@@ -10,11 +10,13 @@ RUN apt-get update -y \
         wget \
         curl \
         git \
+        poppler-utils \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
 
 # install python package
 # python-Levenshtein依赖：python3-dev
+# pdf2image依赖：poppler-utils
 RUN pip3 install \
         numpy \
         scipy \
