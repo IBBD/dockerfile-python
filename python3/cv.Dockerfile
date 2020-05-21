@@ -20,6 +20,7 @@ RUN apt-get update -y \
 RUN pip3 install \
         numpy \
         scipy \
+        pandas \
         pillow \
         imutils \
         requests \
