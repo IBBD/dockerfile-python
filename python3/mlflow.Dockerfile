@@ -9,7 +9,8 @@ FROM python:3.6-slim
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
-RUN pip install mlflow
+# 可视化
+RUN pip install mlflow visdom tensorboard tensorboardX
 
 # 代码目录
 WORKDIR /var/www
