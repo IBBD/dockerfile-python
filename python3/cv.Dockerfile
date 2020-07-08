@@ -17,7 +17,7 @@ RUN apt-get update -y \
 # install python package
 # python-Levenshtein依赖：python3-dev
 # pdf2image依赖：poppler-utils
-RUN pip3 install \
+RUN pip3 --no-cache-dir install \
         numpy \
         scipy \
         pandas \
