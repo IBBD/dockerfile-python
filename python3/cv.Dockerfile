@@ -35,10 +35,10 @@ RUN pip3 --no-cache-dir install \
         diff-match-patch
 
 # 安装自有模块
-RUN pip3 install -r https://github.com/ibbd-dev/python-ibbd-algo/raw/master/requirements.txt \
-    && pip3 install git+https://github.com/ibbd-dev/python-ibbd-algo.git \
-    && pip3 install -r https://github.com/ibbd-dev/python-image-utils/raw/master/requirements.txt \
-    && pip3 install git+https://github.com/ibbd-dev/python-image-utils.git
+RUN pip3 --no-cache-dir install -r https://github.com/ibbd-dev/python-ibbd-algo/raw/master/requirements.txt \
+    && pip3 --no-cache-dir install git+https://github.com/ibbd-dev/python-ibbd-algo.git \
+    && pip3 --no-cache-dir install -r https://github.com/ibbd-dev/python-image-utils/raw/master/requirements.txt \
+    && pip3 --no-cache-dir install git+https://github.com/ibbd-dev/python-image-utils.git
 
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：
