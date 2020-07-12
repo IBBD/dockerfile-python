@@ -12,8 +12,8 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 # 可视化
 RUN pip install mlflow visdom tensorboard tensorboardX
 
-# 代码目录
-WORKDIR /var/www
+# 根目录
+WORKDIR /mlflow
 
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
