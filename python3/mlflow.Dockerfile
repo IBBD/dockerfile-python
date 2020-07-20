@@ -1,5 +1,5 @@
 #
-# python3 Dockerfile
+# 深度学习可视化相关工具
 #
 # https://github.com/ibbd/dockerfile-python/python3
 #
