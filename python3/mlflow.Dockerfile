@@ -10,7 +10,8 @@ FROM python:3.6-slim
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 
 # 可视化
-RUN pip install mlflow visdom tensorboard tensorboardX
+# 网络结构可视化：https://github.com/lutzroeder/netron
+RUN pip install mlflow visdom tensorboard tensorboardX netron
 
 # 根目录
 WORKDIR /mlflow
