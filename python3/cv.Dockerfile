@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8
 
 MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
