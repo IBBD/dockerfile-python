@@ -4,6 +4,9 @@ MAINTAINER Alex Cai "cyy0523xc@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # opencv依赖：libglib2.0-0, libsm6, libxext-dev
+# 20200821 重新编译镜像，opencv报错
+# ImportError: libGL.so.1: cannot open shared object file: No such file or directory
+# ==> install libgl1-mesa-dev
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         libglib2.0-0 libsm6 libxrender1 libxext-dev \
@@ -11,6 +14,7 @@ RUN apt-get update -y \
         curl \
         git \
         poppler-utils \
+        libgl1-mesa-dev \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/* 
 
