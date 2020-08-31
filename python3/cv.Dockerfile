@@ -28,7 +28,7 @@ RUN pip3 --no-cache-dir install \
         imutils \
         requests \
         scikit-image \
-        opencv-python<4.4 \
+        "opencv-python<4.4" \
         fastapi \
         uvicorn \
         python-multipart \
