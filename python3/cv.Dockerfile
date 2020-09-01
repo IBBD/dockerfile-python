@@ -36,7 +36,8 @@ RUN pip3 --no-cache-dir install \
         PyPDF4 \
         pdf2image \
         fuzzywuzzy python-Levenshtein \
-        diff-match-patch
+        diff-match-patch \
+    && python3 -c "import cv2"
 
 # 安装自有模块
 RUN pip3 --no-cache-dir install -r https://github.com/ibbd-dev/python-ibbd-algo/raw/master/requirements.txt \
