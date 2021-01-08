@@ -25,7 +25,7 @@ RUN apt-get update -y \
 # python-Levenshtein依赖：python3-dev
 # pdf2image依赖：poppler-utils
 # fastapi并发： gunicorn uvloop httptools 
-# gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker
+# gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8080
 RUN pip3 --no-cache-dir install \
         numpy \
         scipy \
