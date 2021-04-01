@@ -45,6 +45,7 @@ RUN pip3 --no-cache-dir install \
     && python3 -c "import cv2"
 
 # 安装自有模块
+# 在线编译有时不会更新
 RUN pip3 --no-cache-dir install -r https://github.com/ibbd-dev/python-ibbd-algo/raw/master/requirements.txt \
     && pip3 --no-cache-dir install git+https://github.com/ibbd-dev/python-ibbd-algo.git \
     && pip3 --no-cache-dir install -r https://github.com/ibbd-dev/python-image-utils/raw/master/requirements.txt \
