@@ -42,6 +42,7 @@ RUN pip3 --no-cache-dir install \
         fuzzywuzzy python-Levenshtein \
         diff-match-patch \
         boto3 \
+        PyMuPDF \
     && python3 -c "import cv2"
 
 # 安装自有模块
