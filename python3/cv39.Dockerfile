@@ -3,7 +3,7 @@ FROM python:3.9
 LABEL user="Alex Cai"
 LABEL email="cyy0523xc@gmail.com"
 LABEL version="1.0"
-LABEL description="基础镜像python3.8，pip安装numpy，pandas，opencv, boto3, fastapi, pypdf4等"
+LABEL description="基础镜像python3.9，pip安装numpy，pandas，opencv, boto3, fastapi, pypdf4等"
 ENV DEBIAN_FRONTEND noninteractive
 
 # opencv依赖：libglib2.0-0, libsm6, libxext-dev
