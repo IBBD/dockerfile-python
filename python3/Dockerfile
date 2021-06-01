@@ -5,9 +5,13 @@
 #
 
 # Pull base image.
-FROM python:3.6-slim
+FROM python:3.9
 
-MAINTAINER Alex Cai "cyy0523xc@gmail.com"
+LABEL user="Alex Cai"
+LABEL email="cyy0523xc@gmail.com"
+LABEL version="1.0"
+LABEL description="基础镜像python3.9"
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
