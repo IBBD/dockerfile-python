@@ -19,12 +19,12 @@ RUN apt-get update -y \
         poppler-utils \
         libgl1-mesa-dev \
     && apt-get clean \
-    && rm -r /var/lib/apt/lists/* 
+    && rm -r /var/lib/apt/lists/*
 
 # install python package
 # python-Levenshtein依赖：python3-dev
 # pdf2image依赖：poppler-utils
-# fastapi并发： gunicorn uvloop httptools 
+# fastapi并发： gunicorn uvloop httptools
 # gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8080
 RUN pip3 --no-cache-dir install \
         numpy \
@@ -35,7 +35,7 @@ RUN pip3 --no-cache-dir install \
         requests \
         scikit-image \
         opencv-python \
-        fastapi uvicorn python-multipart \
+        fastapi uvicorn python-multipart aiofiles \
         gunicorn uvloop httptools \
         PyPDF4 \
         pdf2image \
