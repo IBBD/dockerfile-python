@@ -26,6 +26,7 @@ RUN apt-get update -y \
 # pdf2image依赖：poppler-utils
 # fastapi并发： gunicorn uvloop httptools
 # gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8080
+# PyMuPDF高版本会报错
 RUN pip3 --no-cache-dir install \
         numpy \
         scipy \
@@ -42,7 +43,7 @@ RUN pip3 --no-cache-dir install \
         fuzzywuzzy python-Levenshtein \
         diff-match-patch \
         boto3 \
-        PyMuPDF \
+        PyMuPDF==1.19.0 \
     && python3 -c "import cv2"
 
 # 安装自有模块
