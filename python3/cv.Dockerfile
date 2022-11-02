@@ -10,6 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # 20200821 重新编译镜像，opencv报错
 # ImportError: libGL.so.1: cannot open shared object file: No such file or directory
 # ==> install libgl1-mesa-dev
+# libzbar0: 二维码识别依赖
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         libglib2.0-0 libsm6 libxrender1 libxext-dev \
@@ -18,6 +19,7 @@ RUN apt-get update -y \
         git \
         poppler-utils \
         libgl1-mesa-dev \
+        libzbar0 \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
@@ -44,6 +46,7 @@ RUN pip3 --no-cache-dir install \
         diff-match-patch \
         boto3 \
         PyMuPDF==1.19.0 \
+        pyzbar \
     && python3 -c "import cv2"
 
 # 安装自有模块
